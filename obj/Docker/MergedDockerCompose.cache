@@ -1,0 +1,19 @@
+services:
+  dres:
+    build:
+      context: D:\rob
+      dockerfile: src/dres/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44393'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: dres
+    ports:
+    - published: 11677
+      target: 80
+    - published: 44393
+      target: 443
+    volumes:
+    - /c/Users/robin.gurung/AppData/Roaming/ASP.NET/Https:/root/.aspnet/https:ro
+    - /c/Users/robin.gurung/AppData/Roaming/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

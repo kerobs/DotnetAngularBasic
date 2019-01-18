@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  dres:
+    image: ${DOCKER_REGISTRY}dres
+    build:
+      context: .
+      dockerfile: src/dres/Dockerfile
